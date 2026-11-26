@@ -1,19 +1,12 @@
 #include"student.h"
 STD *head;
-int main(int argc,char **argv)
+int main()
 {
-	if(argc==2)
+	FILE *fp=fopen("student.dat","r");
+	if(fp!=0)
 	{
-		FILE *fp=fopen(argv[1],"r");
-		if(fp!=0)
-		{
-			add_data(fp);
-			fclose(fp);
-		}
-		else
-		{
-			printf("Unable to open file\n");
-		}
+		add_data(fp);
+		fclose(fp);
 	}
 	char op;
 	while(1)
